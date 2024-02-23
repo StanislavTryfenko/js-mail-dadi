@@ -1,4 +1,4 @@
-console.log("a");
+// #region email
 
 //declare an array with permitted emails:
 const allowedEmails = ["admin@gmail.com"];
@@ -39,4 +39,51 @@ login.addEventListener("click", function(Login) {
 
     }
 )
+
+// #endregion
+
+// #region dice
+
+//take roll button
+const roll = document.getElementById("roll");
+
+
+//declare dices
+let userDice;
+let PcDice;
+
+//event listener for roll
+roll.addEventListener("click", function(Dice) {
+
+    //dices roll
+    userDice = Math.floor(Math.random(0) * 6) + 1;
+    PcDice = Math.floor(Math.random(0) * 6) + 1;
+
+    //checking dices
+    console.log(userDice);
+    console.log(PcDice);
+
+    //take html slots for results
+    const userDiceResult = document.getElementById("userDiceRandom")
+    const PcDiceResult = document.getElementById("PcDiceRandom")
+
+    //insert results
+    userDiceResult.innerHTML = (userDice);
+    PcDiceResult.innerHTML = (PcDice);
+
+    //rake resoult
+    const resoult = document.getElementById("result")
+
+    if(userDice > PcDice){
+        result.innerHTML = ("YOU WIN");
+    }
+    else if(userDice < PcDice){
+        result.innerHTML = ("YOU LOSE");
+    }
+    else{
+        result.innerHTML = ("TIE");
+    }
+})
+
+// #endregion
 
